@@ -15,9 +15,9 @@ def leer():
 leer()
 
 def aniadir(inc = False, dec = False):
+    leer1 = open('contador.txt', 'r')
+    n = int(leer1.read())
     if inc:
-        leer1 = open('contador.txt', 'r')
-        n = int(leer1.read())
         suma = open('contador.txt', 'w')
         dato = n + 1
         suma.write(f'{dato}')
@@ -25,7 +25,9 @@ def aniadir(inc = False, dec = False):
         leer()
     elif dec:
         resta = open('contador.txt', 'w')
-        resta.write('-1')
+        dato = n - 1
+        resta.write(f'{dato}')
         resta.close()
         leer()
 aniadir(True, False)
+aniadir(False, True)

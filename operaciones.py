@@ -93,8 +93,3 @@ def division(a, b):
         div = a / b
     
     return div
-
-numero1 = 8
-numero2 = 'i'
-s = sumar(numero1, numero2)
-print(s)

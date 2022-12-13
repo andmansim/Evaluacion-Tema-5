@@ -45,7 +45,7 @@ def control_num2(num2):
     
 
     
-def sumar(a, b):
+def suma(a, b):
     try:
         suma = a + b
     except TypeError:
@@ -55,22 +55,14 @@ def sumar(a, b):
     return suma
 
 def resta(a, b):
-    if a > b:
-        try:
-            resta = a - b
-        except TypeError:
-            a = int(input('Escribe un número '))
-            b = int(input('Escribe un número '))
-            resta = a - b
-    else:
-        
-        try:
-            resta = b - a
-        except TypeError:
-            a = int(input('Escribe un número '))
-            b = int(input('Escribe un número '))
-            resta = b - a
-    return resta
+    
+    try:
+        resta = a - b
+    except TypeError:
+        a = int(input('Escribe un número '))
+        b = int(input('Escribe un número '))
+        resta = a - b
+
 
 def producto(a, b):
     try:

@@ -34,3 +34,4 @@ def aniadir(inc = False, dec = False):
         leer()
 aniadir(True, False)
 aniadir(False, True)
+aniadir(False, False)

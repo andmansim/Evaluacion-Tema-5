@@ -27,6 +27,12 @@ print( "{} * {} = {}".format(b, b, producto(b, b) ) )
 
 print( "{} / {} = {}".format(a, c, division(a, c) ) )
 '''
+def control_errores(num1, num2):
+    if not isinstance(num1, float) or not isinstance(num1, int):
+        raise TypeError
+    elif not isinstance(num2, float) or not isinstance(num2, int):    
+        raise TypeError
+
 
 def sumar(a, b):
     suma = a + b

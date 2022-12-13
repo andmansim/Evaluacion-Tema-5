@@ -27,28 +27,33 @@ print( "{} * {} = {}".format(b, b, producto(b, b) ) )
 
 print( "{} / {} = {}".format(a, c, division(a, c) ) )
 '''
-def control_errores(num1, num2):
+def control_num1(num1):
+    a = isinstance(num1, int)
     try :
-        isinstance(num1, int)
-        
-    except TypeError:
+        a == True   
+    except:
         num1 = int(input('Introduce un número '))
+        return num1
+    
+def control_num2(num2):
+    b = isinstance(num2, int)
     try: 
-        isinstance(num2, int)
-    except TypeError:
+        b == True
+    except:
         num2 = int(input('Introduce un número '))
+        return num2
     
+
     
-    return num1, num2
-
-
 def sumar(a, b):
-    a, b =control_errores(a, b)
+    a = control_num1(a)
+    b = control_num2(b)
     suma = a + b
     return suma
 
 def resta(a, b):
-    a, b =control_errores(a, b)
+    a = control_num1(a)
+    b = control_num2(b)
     if a > b:
         resta = a - b
     else:
@@ -56,12 +61,14 @@ def resta(a, b):
     return resta
 
 def producto(a, b):
-    a, b =control_errores(a, b)
+    a = control_num1(a)
+    b = control_num2(b)
     multi = a * b
     return multi
 
 def division(a, b):
-    a, b =control_errores(a, b)
+    a = control_num1(a)
+    b = control_num2(b)
     div = a / b
     return div
 

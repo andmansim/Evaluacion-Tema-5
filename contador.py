@@ -14,6 +14,7 @@ def leer():
     leer.close()
 leer()
 
+#Añadir o quitar datos
 def aniadir(inc = False, dec = False):
     leer1 = open('contador.txt', 'r')
     n = int(leer1.read())
@@ -28,6 +29,8 @@ def aniadir(inc = False, dec = False):
         dato = n - 1
         resta.write(f'{dato}')
         resta.close()
+        leer()
+    else:
         leer()
 aniadir(True, False)
 aniadir(False, True)

@@ -29,16 +29,22 @@ print( "{} / {} = {}".format(a, c, division(a, c) ) )
 '''
 def control_errores(num1, num2):
     if not isinstance(num1, float) or not isinstance(num1, int):
-        raise TypeError
+        a = input('Introduce un número ')
+        control_errores(a, num2)
     elif not isinstance(num2, float) or not isinstance(num2, int):    
-        raise TypeError
+        a = input('Introduce un número ')
+        control_errores(a, num2)
+    else:
+        return num1, num2
 
 
 def sumar(a, b):
+    a, b =control_errores(a, b)
     suma = a + b
     return suma
 
 def resta(a, b):
+    a, b =control_errores(a, b)
     if a > b:
         resta = a - b
     else:
@@ -46,9 +52,15 @@ def resta(a, b):
     return resta
 
 def producto(a, b):
+    a, b =control_errores(a, b)
     multi = a * b
     return multi
 
 def division(a, b):
+    a, b =control_errores(a, b)
     div = a / b
     return div
+
+numero1 = input('Introduce un número ')
+numero2 = input('Introdice otro número')
+s = sumar(numero1, numero2)

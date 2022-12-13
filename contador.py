@@ -16,12 +16,15 @@ leer()
 
 def aniadir(inc = False, dec = False):
     if inc:
-        suma = open('contador.txt', 'a')
-        suma.write('+1')
+        leer1 = open('contador.txt', 'r')
+        n = int(leer1.read())
+        suma = open('contador.txt', 'w')
+        dato = n + 1
+        suma.write(f'{dato}')
         suma.close()
         leer()
     elif dec:
-        resta = open('contador.txt', 'a')
+        resta = open('contador.txt', 'w')
         resta.write('-1')
         resta.close()
         leer()

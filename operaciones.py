@@ -46,32 +46,55 @@ def control_num2(num2):
 
     
 def sumar(a, b):
-    a = control_num1(a)
-    b = control_num2(b)
-    suma = a + b
+    try:
+        suma = a + b
+    except TypeError:
+        a = int(input('Escribe un número '))
+        b = int(input('Escribe un número '))
+        suma = a + b
     return suma
 
 def resta(a, b):
-    a = control_num1(a)
-    b = control_num2(b)
     if a > b:
-        resta = a - b
+        try:
+            resta = a - b
+        except TypeError:
+            a = int(input('Escribe un número '))
+            b = int(input('Escribe un número '))
+            resta = a - b
     else:
-        resta = b - a
+        
+        try:
+            resta = b - a
+        except TypeError:
+            a = int(input('Escribe un número '))
+            b = int(input('Escribe un número '))
+            resta = b - a
     return resta
 
 def producto(a, b):
-    a = control_num1(a)
-    b = control_num2(b)
-    multi = a * b
+    try:
+        multi = a * b
+    except TypeError:
+            a = int(input('Escribe un número '))
+            b = int(input('Escribe un número '))
+            multi = a * b
     return multi
 
 def division(a, b):
-    a = control_num1(a)
-    b = control_num2(b)
-    div = a / b
+    try:
+        div = a / b
+    except TypeError:
+        a = int(input('Escribe un número '))
+        b = int(input('Escribe un número '))
+        div = a / b
+    except ZeroDivisionError:
+        b = int(input('Escribe un número '))
+        div = a / b
+    
     return div
 
 numero1 = 8
 numero2 = 'i'
 s = sumar(numero1, numero2)
+print(s)

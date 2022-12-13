@@ -27,23 +27,7 @@ print( "{} * {} = {}".format(b, b, producto(b, b) ) )
 
 print( "{} / {} = {}".format(a, c, division(a, c) ) )
 '''
-def control_num1(num1):
-    a = isinstance(num1, int)
-    try :
-        a == True   
-    except:
-        num1 = int(input('Introduce un número '))
-        return num1
     
-def control_num2(num2):
-    b = isinstance(num2, int)
-    try: 
-        b == True
-    except:
-        num2 = int(input('Introduce un número '))
-        return num2
-    
-
     
 def suma(a, b):
     try:
@@ -52,7 +36,7 @@ def suma(a, b):
         a = int(input('Escribe un número '))
         b = int(input('Escribe un número '))
         suma = a + b
-    return suma
+    return a, b, suma
 
 def resta(a, b):
     
@@ -62,7 +46,7 @@ def resta(a, b):
         a = int(input('Escribe un número '))
         b = int(input('Escribe un número '))
         resta = a - b
-
+    return a, b, resta
 
 def producto(a, b):
     try:
@@ -71,7 +55,7 @@ def producto(a, b):
             a = int(input('Escribe un número '))
             b = int(input('Escribe un número '))
             multi = a * b
-    return multi
+    return a, b, multi
 
 def division(a, b):
     try:
@@ -84,4 +68,4 @@ def division(a, b):
         b = int(input('Escribe un número '))
         div = a / b
     
-    return div
+    return a, b, div

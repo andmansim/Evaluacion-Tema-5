@@ -28,14 +28,18 @@ print( "{} * {} = {}".format(b, b, producto(b, b) ) )
 print( "{} / {} = {}".format(a, c, division(a, c) ) )
 '''
 def control_errores(num1, num2):
-    if not isinstance(num1, float) or not isinstance(num1, int):
-        a = input('Introduce un número ')
-        control_errores(a, num2)
-    elif not isinstance(num2, float) or not isinstance(num2, int):    
-        a = input('Introduce un número ')
-        control_errores(a, num2)
-    else:
-        return num1, num2
+    try :
+        isinstance(num1, int)
+        
+    except TypeError:
+        num1 = int(input('Introduce un número '))
+    try: 
+        isinstance(num2, int)
+    except TypeError:
+        num2 = int(input('Introduce un número '))
+    
+    
+    return num1, num2
 
 
 def sumar(a, b):
@@ -61,6 +65,6 @@ def division(a, b):
     div = a / b
     return div
 
-numero1 = input('Introduce un número ')
-numero2 = input('Introdice otro número')
+numero1 = 8
+numero2 = 'i'
 s = sumar(numero1, numero2)

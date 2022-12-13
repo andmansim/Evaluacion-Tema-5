@@ -27,6 +27,7 @@ print( "{} * {} = {}".format(b, b, producto(b, b) ) )
 
 print( "{} / {} = {}".format(a, c, division(a, c) ) )
 '''
+
 def sumar(a, b):
     suma = a + b
     return suma
@@ -41,3 +42,7 @@ def resta(a, b):
 def producto(a, b):
     multi = a * b
     return multi
+
+def division(a, b):
+    div = a / b
+    return div

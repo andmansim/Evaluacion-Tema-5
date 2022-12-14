@@ -56,8 +56,11 @@ class Personaje():
         
             
 class Gestor():
-    pass
+    def __init__(self, personaje):
+        self.personaje = personaje
+    def modificar()
 
-a = Personaje(3, 0, 9, 'u')
-print(a.ataque, a.alcance)
+antonia = Personaje(3, 0, 9, 'u')
 f = open('personajes.pckl', 'wb')
+a = Gestor(antonia)
+print(a.personaje.vida)

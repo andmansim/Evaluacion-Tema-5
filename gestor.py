@@ -52,7 +52,12 @@ class Personaje():
             print('El dato tiene que ser numérico')
             dato = int(input('Introduce un número mayor que cero '))
         return dato
-        
+    def __str__(self):
+        v = f'Vida: {self.vida} '
+        at = f'Ataque: {self.ataque} '
+        d = f'Defensa: {self.defensa} '
+        al = f'Alcance: {self.alcance} '
+        return v + at +  d + al
         
             
 class Gestor():
@@ -69,6 +74,6 @@ class Gestor():
 antonia = Personaje(3, 0, 9, 'u')
 f = open('personajes.pckl', 'wb')
 a = Gestor(antonia)
-print(a.personaje.vida)
+#print(a.personaje.vida)
 a.modificar(f)
 a.leer()

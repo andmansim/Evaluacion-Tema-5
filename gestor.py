@@ -81,3 +81,4 @@ p = Gestor(pepe)
 #print(a.personaje.vida)
 a.modificar(f)
 a.leer()
+#Mirar como añadir varios en el fichero

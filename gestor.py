@@ -35,5 +35,22 @@ class Personaje():
         self.ataque = ataque
         self.defensa = defensa
         self.alcance = alcance
+
+        Personaje.control(self.vida)
+        Personaje.control(self.ataque)
+        Personaje.control(self.defensa)
+        Personaje.control(self.alcance)
+        
+    def control(self, dato):
+        if isinstance(dato, int):
+            if dato > 0:
+                pass
+            else:
+                print('El valor es menor que cero')
+        else:
+            print('El dato tiene que ser numérico')
         
         
+            
+class Gestor():
+    pass

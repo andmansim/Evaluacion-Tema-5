@@ -41,16 +41,21 @@ class Personaje():
         Personaje.control(self.defensa)
         Personaje.control(self.alcance)
         
-    def control(self, dato):
+    def control(dato):
         if isinstance(dato, int):
             if dato > 0:
                 pass
             else:
                 print('El valor es menor que cero')
+                dato = int(input('Introduce un número mayor que cero '))
         else:
             print('El dato tiene que ser numérico')
+            dato = int(input('Introduce un número mayor que cero '))
         
         
             
 class Gestor():
     pass
+
+a = Personaje(3, 0, 9, 'u')
+print(a.defensa, a.alcance)

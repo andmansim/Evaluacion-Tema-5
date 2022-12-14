@@ -1,43 +1,6 @@
 '''
 Utilizando como base el ejercicio de los personajes que hicimos, en este ejercicio tendrás que crear un gestor de personajes gestor.py para añadir y borrar la información de los siguientes personajes:
 
-Vida
-
-Ataque
-
-Defensa
-
-Alcance
-
-Caballero
-
-4
-
-2
-
-4
-
-2
-
-Guerrero
-
-2
-
-4
-
-2
-
-4
-
-Arquero
-
-2
-
-4
-
-1
-
-8
 
 Deberás hacer uso del módulo pickle y todos los cambios que realices se irán guardando en un fichero binario personajes.pckl, por lo que aunque cerremos el programa los datos persistirán.
 
@@ -63,3 +26,14 @@ Sugerencia
 
 El ejemplo con pickle que realizamos anteriormente puede servirte como base.
 '''
+
+import pickle
+
+class Personaje():
+    def __init__(self, vida, ataque, defensa, alcance):
+        self.vida = vida
+        self.ataque = ataque
+        self.defensa = defensa
+        self.alcance = alcance
+        
+        

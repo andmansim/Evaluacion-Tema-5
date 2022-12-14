@@ -60,3 +60,4 @@ class Gestor():
 
 a = Personaje(3, 0, 9, 'u')
 print(a.ataque, a.alcance)
+f = open('personajes.pckl', 'wb')

@@ -63,17 +63,21 @@ class Personaje():
 class Gestor():
     def __init__(self, personaje):
         self.personaje = personaje
-    def modificar(self, fichero):
+    def añadir(self, fichero):
         pickle.dump(self.personaje, fichero)
         fichero.close()
     def leer(self):
         fichero = open('personajes.pckl', 'rb')
         print(pickle.load(fichero))
         fichero.close()
+    def borrar(self, dato):
+        fichero = open('personajes.pckl', 'rb')
 
 antonia = Personaje(3, 0, 9, 'u')
+pepe = Personaje(3, 6, 5, 1)
 f = open('personajes.pckl', 'wb')
 a = Gestor(antonia)
+p = Gestor(pepe)
 #print(a.personaje.vida)
 a.modificar(f)
 a.leer()

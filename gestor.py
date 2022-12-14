@@ -36,10 +36,10 @@ class Personaje():
         self.defensa = defensa
         self.alcance = alcance
 
-        Personaje.control(self.vida)
-        Personaje.control(self.ataque)
-        Personaje.control(self.defensa)
-        Personaje.control(self.alcance)
+        self.vida = Personaje.control(self.vida)
+        self.ataque = Personaje.control(self.ataque)
+        self.defensa = Personaje.control(self.defensa)
+        self.alcance = Personaje.control(self.alcance)
         
     def control(dato):
         if isinstance(dato, int):
@@ -51,6 +51,7 @@ class Personaje():
         else:
             print('El dato tiene que ser numérico')
             dato = int(input('Introduce un número mayor que cero '))
+        return dato
         
         
             
@@ -58,4 +59,4 @@ class Gestor():
     pass
 
 a = Personaje(3, 0, 9, 'u')
-print(a.defensa, a.alcance)
+print(a.ataque, a.alcance)

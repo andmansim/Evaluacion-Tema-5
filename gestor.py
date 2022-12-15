@@ -52,7 +52,7 @@ class Personaje():
             print('El dato tiene que ser numérico')
             dato = int(input('Introduce un número mayor que cero '))
         return dato
-    def __str__(self):
+    def datos(self):
         v = f'Vida: {self.vida} '
         at = f'Ataque: {self.ataque} '
         d = f'Defensa: {self.defensa} '
@@ -65,8 +65,9 @@ class Gestor():
     def __init__(self):
         self.datos= []
     def añadir(self, d):
+        self.d = d
         fichero = open('personajes.pckl', 'wb')
-        self.datos.append(d)
+        self.datos.append ( self.d)
         pickle.dump(self.datos, fichero)
         fichero.close()
     def leer(self):
@@ -75,13 +76,19 @@ class Gestor():
         fichero.close()
     def borrar(self, dato):
         fichero = open('personajes.pckl', 'rb')
+        for i in fichero:
+            if i == dato:
+                del(i)
+        Gestor.leer()
 
 antonia = Personaje(3, 0, 9, 'u')
+a = 'Antonia ' + antonia.datos()
 pepe = Personaje(3, 6, 5, 1)
-f = open('personajes.pckl', 'wb')
-Gestor.añadir(antonia)
-Gestor.añadir(pepe)
-Gestor.leer()
+p = 'Pepe ' + pepe.datos()
+g = Gestor()
+g.añadir(a)
+g.añadir(p)
+g.leer()
 
 #print(a.personaje.vida)
 

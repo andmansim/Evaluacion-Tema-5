@@ -74,24 +74,28 @@ class Gestor():
         fichero = open('personajes.pckl', 'rb')
         print(pickle.load(fichero))
         fichero.close()
-    def borrar(self, dato, ob):
+    def borrar(self, dato):
         fichero = open('personajes.pckl', 'wb')
         for i in self.datos:
-            if i == dato:
-                del(i)
-        print(self.datos)
+            if dato in i:
+                self.datos.remove(i)
         pickle.dump(self.datos, fichero)
         fichero.close()
-        Gestor.leer(ob)
         
+        
+caballero = Personaje(4, 2, 4, 2)
+c = 'Caballero ' + caballero.datos()
+guerrero = Personaje(2, 4, 2, 4)
+g = 'Guerero ' + guerrero.datos()
+arquero = Personaje(2, 4, 1, 8)
+a = 'Arquero ' + arquero.datos()
+gest = Gestor()
+gest.añadir(c)
+gest.añadir(g)
+gest.añadir(a)
+gest.leer()
+gest.borrar('Arquero')
+gest.leer()
 
-antonia = Personaje(3, 0, 9, 'u')
-a = 'Antonia ' + antonia.datos()
-pepe = Personaje(3, 6, 5, 1)
-p = 'Pepe ' + pepe.datos()
-g = Gestor()
-g.añadir(a)
-g.añadir(p)
-g.leer()
-g.borrar(a, g)
+
 

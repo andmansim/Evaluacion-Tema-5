@@ -66,8 +66,10 @@ gest = Gestor()
 gest.añadir(c)
 gest.añadir(g)
 gest.añadir(a)
+print('Leemos fichero')
 gest.leer()
 gest.borrar('Arquero')
+print('Borramos Arquero')
 gest.leer()
 
 

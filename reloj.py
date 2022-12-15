@@ -10,10 +10,13 @@ system('clear') para limpiar la pantalla de la terminal en sistemas Windows y Li
 
 
 '''
-from datetime import *
 import time
 import os 
 import sys
-
-tiempo = time.strftime("%H: %M : %S")
-print(tiempo)
+def hora_ac():
+    tiempo = time.strftime("%H:%M:%S")
+    os.system('cls')
+    os.system('clear')
+    print(tiempo)
+    tiempo.after(200, hora_ac)
+    

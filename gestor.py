@@ -67,7 +67,7 @@ class Gestor():
     def añadir(self, d):
         self.d = d
         fichero = open('personajes.pckl', 'wb')
-        self.datos.append ( self.d)
+        self.datos.append(self.d)
         pickle.dump(self.datos, fichero)
         fichero.close()
     def leer(self):
@@ -75,11 +75,15 @@ class Gestor():
         print(pickle.load(fichero))
         fichero.close()
     def borrar(self, dato, ob):
-        fichero = open('personajes.pckl', 'rb')
-        for i in fichero:
+        fichero = open('personajes.pckl', 'wb')
+        for i in self.datos:
             if i == dato:
                 del(i)
+        print(self.datos)
+        pickle.dump(self.datos, fichero)
+        fichero.close()
         Gestor.leer(ob)
+        
 
 antonia = Personaje(3, 0, 9, 'u')
 a = 'Antonia ' + antonia.datos()

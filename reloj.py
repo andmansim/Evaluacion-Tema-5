@@ -12,11 +12,12 @@ system('clear') para limpiar la pantalla de la terminal en sistemas Windows y Li
 '''
 import time
 import os 
-import sys
+from tkinter import*
 def hora_ac():
     tiempo = time.strftime("%H:%M:%S")
     os.system('cls')
     os.system('clear')
     print(tiempo)
-    tiempo.after(200, hora_ac)
-    
+hora_ac()
+while time.sleep(60): 
+    hora_ac()

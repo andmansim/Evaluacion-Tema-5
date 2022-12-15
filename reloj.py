@@ -6,7 +6,7 @@ import os
 def hora_ac():
     tiempo = time.strftime("%H:%M:%S")
     os.system('cls')
-    print(tiempo)
+    print('Hora actual:', tiempo)
     
 hora_ac()
 while True: 

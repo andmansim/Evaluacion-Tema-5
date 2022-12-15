@@ -69,7 +69,7 @@ gest.añadir(a)
 print('Leemos fichero')
 gest.leer()
 gest.borrar('Arquero')
-print('Borramos Arquero')
+print('\nBorramos Arquero')
 gest.leer()
 
 

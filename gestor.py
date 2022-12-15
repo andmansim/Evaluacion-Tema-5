@@ -74,12 +74,12 @@ class Gestor():
         fichero = open('personajes.pckl', 'rb')
         print(pickle.load(fichero))
         fichero.close()
-    def borrar(self, dato):
+    def borrar(self, dato, ob):
         fichero = open('personajes.pckl', 'rb')
         for i in fichero:
             if i == dato:
                 del(i)
-        Gestor.leer()
+        Gestor.leer(ob)
 
 antonia = Personaje(3, 0, 9, 'u')
 a = 'Antonia ' + antonia.datos()
@@ -89,6 +89,5 @@ g = Gestor()
 g.añadir(a)
 g.añadir(p)
 g.leer()
-
-#print(a.personaje.vida)
+g.borrar(a, g)
 

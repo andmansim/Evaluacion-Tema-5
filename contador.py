@@ -12,7 +12,6 @@ def leer():
     contenido = leer.read()
     print(contenido)
     leer.close()
-leer()
 
 #Añadir o quitar datos
 def aniadir(inc = False, dec = False):
@@ -32,6 +31,12 @@ def aniadir(inc = False, dec = False):
         leer()
     else:
         leer()
+
+print('Dato actual')
+leer()
+print('\nAñadimos uno')
 aniadir(True, False)
+print('\nQuitamos uno')
 aniadir(False, True)
+print('\nNo hacemos nada')
 aniadir(False, False)
